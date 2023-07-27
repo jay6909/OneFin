@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "92e6c5e1-8ded-485b-95a9-210b3e4ff8ee",
+		"name": "OneFin Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24263495"
+	},
+	"item": [
+		{
+			"name": "Login API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"v^4!C%CQ94f0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo.onefin.in/api/v1/usermodule/login/",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"onefin",
+						"in"
+					],
+					"path": [
+						"api",
+						"v1",
+						"usermodule",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demo.onefin.in/api/v1/maya/movies/",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"onefin",
+						"in"
+					],
+					"path": [
+						"api",
+						"v1",
+						"maya",
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
