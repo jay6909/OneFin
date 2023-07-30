@@ -51,8 +51,7 @@
 						"login",
 						""
 					]
-				},
-				"description": "for some reason it is saying internal error whenever I attach the token I recieved from login api"
+				}
 			},
 			"response": []
 		},
