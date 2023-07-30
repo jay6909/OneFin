@@ -109,7 +109,7 @@
 						""
 					]
 				},
-				"description": "for some reason it is saying internal error whenever I attach the token I recieved from login api"
+				"description": "some times it says internal server error when I attach the token I recieved from login api, but when I try again its 200 response"
 			},
 			"response": []
 		}
