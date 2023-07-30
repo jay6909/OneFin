@@ -8,6 +8,22 @@
 	"item": [
 		{
 			"name": "Login API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"    let res=pm.response.json()\r",
+							"    pm.globals.set('token',res.data.token)\r",
+							"\r",
+							"pm.test(\"check response ok\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -35,15 +51,48 @@
 						"login",
 						""
 					]
-				}
+				},
+				"description": "for some reason it is saying internal error whenever I attach the token I recieved from login api"
 			},
 			"response": []
 		},
 		{
 			"name": "Movie API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"console.log(pm.request.headers)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check response ok\", function(){\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "https://demo.onefin.in/api/v1/maya/movies/",
 					"protocol": "https",
@@ -59,7 +108,8 @@
 						"movies",
 						""
 					]
-				}
+				},
+				"description": "for some reason it is saying internal error whenever I attach the token I recieved from login api"
 			},
 			"response": []
 		}
